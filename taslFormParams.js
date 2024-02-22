@@ -1,11 +1,13 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Example of getting a URL parameter value
-    var params = new URLSearchParams(window.location.search);
-    var valueFromUrl = params.get('paramName'); // Replace 'paramName' with the actual parameter name
+(function(){
+    window.addEventListener('load', function(){
+        var targetControlId = 'yourTargetFieldId'; // Replace 'yourTargetFieldId' with the actual ID of your target field
 
-    // Example of setting this value to another field
-    var targetField = document.getElementById('112037450'); // Replace 'targetFieldId' with the actual ID of your target field
-    if (targetField) {
-        targetField.value = valueFromUrl; // Or any logic to determine the value
-    }
-});
+        var domAbstractionLayer = loader.getDOMAbstractionLayer();
+
+        // Here you set the new value for the target field
+        domAbstractionLayer.setControlValueById(
+            String(targetControlId),
+            "New Value" // Replace "New Value" with the value you want to set
+        );
+    });
+})();
