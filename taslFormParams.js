@@ -1,8 +1,11 @@
-setInterval(function() {
-  var labelElement = document.getElementById('112036845');
-  if (labelElement && labelElement.textContent === "AutomationSummaryPlaceholder") {
-    labelElement.textContent = 'Your New Text Here';
-    // Optionally clear the interval if you're sure it only needs to run once
-    // clearInterval(thisInterval);
-  }
-}, 1000); // Checks every 1000 milliseconds (1 second)
+document.addEventListener('DOMContentLoaded', function() {
+    // Example of getting a URL parameter value
+    var params = new URLSearchParams(window.location.search);
+    var valueFromUrl = params.get('paramName'); // Replace 'paramName' with the actual parameter name
+
+    // Example of setting this value to another field
+    var targetField = document.getElementById('112037450'); // Replace 'targetFieldId' with the actual ID of your target field
+    if (targetField) {
+        targetField.value = valueFromUrl; // Or any logic to determine the value
+    }
+});
