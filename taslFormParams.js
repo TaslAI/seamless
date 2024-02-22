@@ -1,13 +1,9 @@
 (function(){
-    window.addEventListener('load', function(){
-        var targetControlId = '112037450'; // Replace 'yourTargetFieldId' with the actual ID of your target field
+window.addEventListener('load', function(){
 
-        var domAbstractionLayer = loader.getDOMAbstractionLayer();
+	var targetControlId = 112037450; /** ID OF THE RECEIVER CONTROL **/
+	var targetControlInstance = loader.getEngine().getDocument().getElementById(targetControlId);
 
-        // Here you set the new value for the target field
-        domAbstractionLayer.setControlValueById(
-            String(targetControlId),
-            "New Value" // Replace "New Value" with the value you want to set
-        );
-    });
+	targetControlInstance.setValue("hello");
+});
 })();
